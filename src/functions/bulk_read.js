@@ -8,6 +8,7 @@ exports.handler = async event => {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*",
         "Access-Control-Allow-Methods": "*",
+        "content-type": "application/json; charset=utf-8",
         "Access-Control-Max-Age": "1728000" // 20 days
       },
       body: "\n"
