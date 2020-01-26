@@ -1,0 +1,24 @@
+{
+  "name": "gw2-item-stats-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gw2itemstats": "0.0.3",
+    "memoizee": "^0.4.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madou/gw2-item-stats-api.git"
+  },
+  "author": "Michael Dougall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madou/gw2-item-stats-api/issues"
+  },
+  "homepage": "https://github.com/madou/gw2-item-stats-api#readme"
+}
