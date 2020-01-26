@@ -13,7 +13,7 @@
 Example usage:
 
 ```sh
-curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=77482&lang=en
+$ curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=77482&lang=en
 {"id":656,"name":"Cleric's","attributes":[]}
 ```
 
@@ -29,15 +29,17 @@ curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=77482
 
 Array of items.
 
+- calculatedId = `itemId + id`
+
 ```json
 [
   {
-    "calculatedId": "806481379", // itemId+id
-    "id": 1379, // stats id
-    "itemId": 80648, // item id
-    "type": "Coat", // type of item
-    "rarity": "Ascended", // rarity of item
-    "level": 80 // level of item
+    "calculatedId": "806481379",
+    "id": 1379,
+    "itemId": 80648,
+    "type": "Coat",
+    "rarity": "Ascended",
+    "level": 80
   }
 ]
 ```
@@ -45,8 +47,9 @@ Array of items.
 Example usage:
 
 ```sh
-curl --header "Content-Type: application/json" \
+$ curl --header "Content-Type: application/json" \
   --request POST \
-  --data '{"calculatedId": "806481379","id": 1379,"itemId": 80648,"type": "Coat","rarity": "Ascended","level": 80}' \
+  --data '[{"calculatedId": "806481379","id": 1379,"itemId": 80648,"type": "Coat","rarity": "Ascended","level": 80}]' \
   https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read?lang=en
+[{"id":1379,"name":"Grieving","attributes":[{"attribute":"Power","modifier":121},{"attribute":"Precision","modifier":67},{"attribute":"CritDamage","modifier":67},{"attribute":"ConditionDamage","modifier":121}]}]
 ```

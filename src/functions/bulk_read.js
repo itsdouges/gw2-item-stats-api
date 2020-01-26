@@ -19,9 +19,6 @@ exports.handler = async event => {
 
   const params = JSON.parse(event.body);
   const { lang } = event.queryStringParameters;
-
-  console.log(params);
-
   const result = await bulkRead(params, lang);
 
   return {
