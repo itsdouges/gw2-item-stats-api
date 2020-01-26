@@ -7,8 +7,10 @@ exports.handler = async event => {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Methods": "POST"
-      }
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Max-Age": 1728000 // 20 days
+      },
+      body: "\n"
     };
   }
 
