@@ -6,10 +6,9 @@ exports.handler = async event => {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers":
-          "Origin, X-Requested-With, Content-Type, Accept"
-      },
-      body: JSON.stringify({ message: "Allowed." })
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "POST"
+      }
     };
   }
 
