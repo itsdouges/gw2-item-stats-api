@@ -15,7 +15,7 @@ async function itemStats(id, lang) {
 const readItemStats = memoize(itemStats, {
   promise: true,
   preFetch: true,
-  maxAge: config.cache.itemStats
+  maxAge: 86400000
 });
 
 module.exports = { readItemStats };
