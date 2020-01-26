@@ -19,19 +19,10 @@ exports.handler = async (event, context) => {
 
   const params = JSON.parse(event.body);
   const { lang } = event.queryStringParameters;
-  let result;
-
-  try {
-    result = await bulkRead(params, lang);
-  } catch (e) {
-    console.log(e);
-    throw e;
-  }
-
-  console.log(result);
+  const result = await bulkRead(params, lang);
 
   return {
     statusCode: 200,
-    body: JSON.stringify(result)
+    body: JSON.stringify({ result })
   };
 };
