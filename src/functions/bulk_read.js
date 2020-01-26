@@ -1,6 +1,6 @@
 const { bulkRead } = require("..");
 
-exports.handler = async (event, context) => {
+exports.handler = async event => {
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
@@ -19,10 +19,13 @@ exports.handler = async (event, context) => {
 
   const params = JSON.parse(event.body);
   const { lang } = event.queryStringParameters;
+
+  console.log(params);
+
   const result = await bulkRead(params, lang);
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ result })
+    body: JSON.stringify(result)
   };
 };

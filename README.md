@@ -2,6 +2,8 @@
 
 ## `read`
 
+`https://gw2-itemstats.netlify.com/.netlify/functions/read?id={statsId}&item={itemId}&lang={lang}`
+
 ### Query params
 
 - id (item stats id)
@@ -23,6 +25,8 @@ curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=77482
 
 ### Body
 
+`https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read?lang={lang}`
+
 Array of items.
 
 ```json
@@ -41,5 +45,8 @@ Array of items.
 Example usage:
 
 ```sh
-
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"calculatedId": "806481379","id": 1379,"itemId": 80648,"type": "Coat","rarity": "Ascended","level": 80}' \
+  https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read?lang=en
 ```
