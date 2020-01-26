@@ -2,7 +2,7 @@ const calculateAttributes = require("./lib/gw2/itemstats");
 const { readItemStats } = require("./lib/gw2");
 const { allSettled } = require("./lib/promise");
 
-export async function read(id, item, lang) {
+async function read(id, item, lang) {
   const itemStats = await readItemStats(id, lang);
   const attributes = calculateAttributes(item, itemStats);
 
@@ -12,7 +12,7 @@ export async function read(id, item, lang) {
   };
 }
 
-export async function bulkRead(items, lang) {
+async function bulkRead(items, lang) {
   const promises = items.map(item => readItemStats(item.id, lang));
 
   const stats = await allSettled(promises);
@@ -49,3 +49,5 @@ export async function bulkRead(items, lang) {
 
   return calculatedItemStats;
 }
+
+module.exports = { read, bulkRead };
