@@ -1,3 +1,5 @@
+const { bulkRead } = require("..");
+
 exports.handler = async (event, context) => {
   if (event.httpMethod === "OPTIONS") {
     return {
@@ -16,7 +18,9 @@ exports.handler = async (event, context) => {
   }
 
   const params = querystring.parse(event.body);
-  const result = params;
+  const { lang } = event.queryStringParameters;
+
+  const result = await bulkRead(params, lang);
 
   return {
     statusCode: 200,
