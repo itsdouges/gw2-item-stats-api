@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "gw2itemstats": "0.0.3",
     "memoizee": "^0.4.14",
     "netlify-lambda": "^1.6.3"

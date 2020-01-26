@@ -1,4 +1,5 @@
 const memoize = require("memoizee");
+const axios = require("axios");
 
 async function itemStats(id, lang) {
   const response = await axios.get(
