@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const params = querystring.parse(event.body);
+  const params = JSON.parse(event.body);
   const { lang } = event.queryStringParameters;
 
   const result = await bulkRead(params, lang);
