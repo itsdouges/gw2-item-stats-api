@@ -1,4 +1,4 @@
-const calculateAttributes = require("./lib/gw2/itemstats");
+const calculateAttributes = require("./lib/itemstats");
 const { readItemStats } = require("./lib/gw2");
 const { allSettled } = require("./lib/promise");
 

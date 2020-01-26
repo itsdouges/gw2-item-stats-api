@@ -1,2 +1,3 @@
 [build]
-    functions = "functions"
+    build = "npm run build"
+    functions = "dist/functions"

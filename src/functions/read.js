@@ -1,4 +1,4 @@
-const { read } = require("../src");
+const { read } = require("..");
 
 exports.handler = async event => {
   const { id, item, lang } = event.queryStringParameters;

@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "gw2itemstats": "0.0.3",
-    "memoizee": "^0.4.14"
+    "memoizee": "^0.4.14",
+    "netlify-lambda": "^1.6.3"
   },
   "devDependencies": {},
   "scripts": {
+    "build": "netlify-lambda build src/functions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
