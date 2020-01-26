@@ -25,6 +25,10 @@ exports.handler = async event => {
   return {
     statusCode: 200,
     headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Max-Age": "1728000", // 20 days
       "cache-control": "public,max-age=604800", // 7 days cache
       "content-type": "application/json; charset=utf-8"
     },
