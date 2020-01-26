@@ -1,6 +1,6 @@
-import calculateAttributes from "./lib/gw2/itemstats";
-import { readItemStats } from "./lib/gw2";
-import { allSettled } from "./lib/promise";
+const calculateAttributes = require("./lib/gw2/itemstats");
+const { readItemStats } = require("./lib/gw2");
+const { allSettled } = require("./lib/promise");
 
 export async function read(id, item, lang) {
   const itemStats = await readItemStats(id, lang);

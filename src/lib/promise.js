@@ -1,4 +1,4 @@
-export function allSettled(promises) {
+function allSettled(promises) {
   const wrappedPromises = promises.map(p =>
     Promise.resolve(p).then(
       val => ({ state: "fulfilled", value: val }),
@@ -8,3 +8,5 @@ export function allSettled(promises) {
 
   return Promise.all(wrappedPromises);
 }
+
+module.exports = { allSettled };

@@ -1,4 +1,4 @@
-import { queryItemAttributes } from "gw2itemstats";
+const { queryItemAttributes } = require("gw2itemstats");
 
 function convertType(apiType) {
   switch (apiType) {
@@ -83,7 +83,7 @@ function getCalcFunction(itemAttributes, selectedStat) {
   }
 }
 
-export default function calculateAttributes(item, itemStat) {
+function calculateAttributes(item, itemStat) {
   if (!item || !itemStat) {
     return [];
   }
@@ -107,3 +107,5 @@ export default function calculateAttributes(item, itemStat) {
     modifier: calcModifier(attribute, multiplier)
   }));
 }
+
+module.exports = calculateAttributes;
