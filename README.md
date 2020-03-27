@@ -2,7 +2,7 @@
 
 ## `read`
 
-`https://gw2-itemstats.netlify.com/.netlify/functions/read?id={statsId}&item={itemId}&lang={lang}`
+`https://fh1ydk3yra.execute-api.us-east-1.amazonaws.com/default/read?id={statsId}&item={itemId}&lang={lang}`
 
 ### Query params
 
@@ -13,7 +13,8 @@
 Example usage:
 
 ```sh
-$ curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=77482&lang=en
+$ curl https://fh1ydk3yra.execute-api.us-east-1.amazonaws.com/default/read?id=656&item=77482&lang=en
+
 {"id":656,"name":"Cleric's","attributes":[]}
 ```
 
@@ -25,7 +26,7 @@ $ curl https://gw2-itemstats.netlify.com/.netlify/functions/read?id=656&item=774
 
 ### Body
 
-`https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read?lang={lang}`
+`https://fh1ydk3yra.execute-api.us-east-1.amazonaws.com/default/bulk_read?lang={lang}`
 
 Array of items.
 
@@ -50,6 +51,7 @@ Example usage:
 $ curl --header "Content-Type: application/json" \
   --request POST \
   --data '[{"calculatedId": "806481379","id": 1379,"itemId": 80648,"type": "Coat","rarity": "Ascended","level": 80}]' \
-  https://gw2-itemstats.netlify.com/.netlify/functions/bulk_read?lang=en
+  https://fh1ydk3yra.execute-api.us-east-1.amazonaws.com/default/bulk_read?lang=en
+
 [{"id":1379,"name":"Grieving","attributes":[{"attribute":"Power","modifier":121},{"attribute":"Precision","modifier":67},{"attribute":"CritDamage","modifier":67},{"attribute":"ConditionDamage","modifier":121}]}]
 ```
