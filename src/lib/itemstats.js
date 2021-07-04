@@ -76,7 +76,7 @@ function getCalcFunction(itemAttributes, selectedStat) {
       return getCalcFunctionStandard(itemAttributes, selectedStat);
     case 4:
       return getCalcFunctionQuad(itemAttributes, selectedStat);
-    case 7:
+    case 9:
       return getCalcFunctionCelectiel(itemAttributes);
     default:
       throw new Error("impossible condition");
